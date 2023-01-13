@@ -133,7 +133,7 @@ async function main(niftiImage, niftiHeader) {
     let outputBuffer=tf.buffer([paddingsize_dim1, paddingsize_dim2, paddingsize_dim3], 'bool');
     //create the output label map buffer to store the result of model deployment.
     
-    session = await ort.InferenceSession.create('./Unet512.onnx', {executionProviders: ['wasm']});
+    session = await ort.InferenceSession.create('../Unet512.onnx', {executionProviders: ['wasm']});
     //create the ONNX model inference session and specify the backend executer to be Web Assembly
     
     endTime=performance.now();
